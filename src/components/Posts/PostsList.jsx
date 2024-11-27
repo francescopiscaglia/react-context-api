@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 
+// Questo componente serve per fare un map di tutti i post e stamparli a schermo
 export default function PostsList({ posts, apiUrl, handleDeleteClick }) {
     return (
         <>
