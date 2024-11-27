@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import OffCanvasForm from "../components/OffCanvasForm/OffCanvasForm";
-import PostsList from "../components/Posts/PostsList";
+// import context
+import { useContext } from "react";
+import GlobalContext from "../contexts/GlobalContext";
 
 // i dati iniziali del formo
 const initialFormData = {
@@ -24,7 +26,8 @@ export default function PostsPage() {
     const [formData, setFormData] = useState(initialFormData);
     const [posts, setPosts] = useState([]);
     const [checkedValue, setCheckedValue] = useState([]);
-
+    // context
+    const { PostsList } = useContext(GlobalContext)
 
     // useEffect per eseguire il fetch dei dati quando il componente viene montato
     useEffect(() => fetchData(apiUrl, endpointApi), []);
